@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+*.tsbuildinfo
+
+# Local environment and hosting state
+.env*
+.vercel/
+
+# Local logs and OS files
+*.log
+.DS_Store
+
+# Local agent/tooling state
+.agents/
+.codex/
+
+# Internal planning/reference files
+docs/
+
+# Backup source assets
+assets/backup/
