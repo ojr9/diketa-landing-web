@@ -147,6 +147,7 @@ export interface LandingContent {
     eyebrow: string;
     title: string;
     body: string;
+    googleSignup: boolean;
     reassurance: string;
     image: LandingImage;
   };
@@ -589,6 +590,7 @@ export const landingContent = {
       title: "Join before clearer weight-care communication opens.",
       body:
         "Be among the first to hear when Diketa launches private doctor-patient chat, weight-care appointment booking, and secure lab-result sharing for obesity and weight-loss care.",
+      googleSignup: true,
       reassurance: "Early updates only. Private weight-care communication is coming soon.",
       image: sharedImageCopy.en.finalCta,
     },
@@ -872,6 +874,7 @@ export const landingContent = {
       title: "Únete al acceso anticipado",
       body:
         "Sé de las primeras personas en saber cuándo Diketa lance chat privado entre médico y paciente, reserva de citas de cuidado de peso y resultados de laboratorio compartidos para obesidad y pérdida de peso.",
+      googleSignup: true,
       reassurance: "Solo actualizaciones tempranas. La comunicación privada de cuidado de peso llegará pronto.",
       image: sharedImageCopy.es.finalCta,
     },

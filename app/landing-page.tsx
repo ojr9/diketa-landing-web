@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import GoogleSignupButton from "../components/GoogleSignupButton";
 import type { LandingContent } from "../lib/landing-content";
 import type { LandingImage } from "../lib/landing-images";
 
@@ -310,6 +311,7 @@ export function LandingPage({ content }: { content: LandingContent }) {
             <p className="eyebrow">{content.finalCta.eyebrow}</p>
             <h2 id="final-title">{content.finalCta.title}</h2>
             <p>{content.finalCta.body}</p>
+            <div>{content.finalCta.googleSignup && <GoogleSignupButton />}</div>
             <p className="reassurance-line">{content.finalCta.reassurance}</p>
           </div>
           <ImageFrame image={content.finalCta.image} sizes="(max-width: 768px) 100vw, 34vw" />
