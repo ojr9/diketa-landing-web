@@ -1,6 +1,8 @@
 import Image from "next/image";
 
-import GoogleSignupButton from "../components/GoogleSignupButton";
+import { DiketaWordmark } from "../components/DiketaWordmark";
+import { GoogleSignupWithConsent } from "../components/GoogleSignupWithConsent";
+import { FooterLegalLinks } from "../components/legal/FooterLegalLinks";
 import type { LandingContent } from "../lib/landing-content";
 import type { LandingImage } from "../lib/landing-images";
 
@@ -70,9 +72,11 @@ export function LandingPage({ content }: { content: LandingContent }) {
   return (
     <main>
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label={content.header.homeAriaLabel}>
-          {content.brand}
-        </a>
+        <DiketaWordmark
+          aria-label={content.header.homeAriaLabel}
+          href="#top"
+          priority
+        />
         <nav className="desktop-nav" aria-label={content.header.navigationAriaLabel}>
           {content.navLinks.map((link) => (
             <a key={link.href} href={link.href}>
@@ -311,7 +315,11 @@ export function LandingPage({ content }: { content: LandingContent }) {
             <p className="eyebrow">{content.finalCta.eyebrow}</p>
             <h2 id="final-title">{content.finalCta.title}</h2>
             <p>{content.finalCta.body}</p>
-            <div>{content.finalCta.googleSignup && <GoogleSignupButton />}</div>
+            <div>
+              {content.finalCta.googleSignup && (
+                <GoogleSignupWithConsent locale={content.locale} />
+              )}
+            </div>
             <p className="reassurance-line">{content.finalCta.reassurance}</p>
           </div>
           <ImageFrame image={content.finalCta.image} sizes="(max-width: 768px) 100vw, 34vw" />
@@ -321,9 +329,7 @@ export function LandingPage({ content }: { content: LandingContent }) {
       <footer className="site-footer">
         <div className="page-wrap site-footer__grid">
           <div>
-            <a className="wordmark" href="#top">
-              {content.brand}
-            </a>
+            <DiketaWordmark href="#top" />
             <p>{content.footer.tagline}</p>
           </div>
           <nav aria-label={content.footer.navigationAriaLabel}>
@@ -333,6 +339,7 @@ export function LandingPage({ content }: { content: LandingContent }) {
               </a>
             ))}
           </nav>
+          <FooterLegalLinks locale={content.locale} />
           <LanguageSwitcher content={content} className="footer-language" />
           <p className="copyright">{content.footer.copyright}</p>
         </div>
